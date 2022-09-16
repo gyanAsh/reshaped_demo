@@ -1,8 +1,11 @@
-// import Image from 'next/image'
+import { useRouter } from 'next/router';
 import Link from 'next/link'
 import { ActionBar, Button, Image, Frame, Stack } from "reshaped"
 import style from '../../styles/Navigation.module.css'
 const Navigation = () => {
+
+    const router = useRouter();
+    console.log(router.asPath)
     return (
         <Frame
             className={style.navbar}
@@ -12,47 +15,50 @@ const Navigation = () => {
             borderColor="positive-faded"
             align="center"
         >
-            <Image src="/Icon/Logo.svg" alt="Vercel Logo" width="50px" />
+            <Link href="/v3/home">
+                <Image src="/Icon/Logo.svg" alt="Vercel Logo" width="50px" />
+            </Link>
+            
             <ActionBar className={style.navLinkContainer}>
                 <Stack>
                     <Stack.Item>
                         <Link href="/v3/home">
-                            <Button  color="primary" onClick={()=>console.log("Home button clicked")} fullWidth>
+                            <Button  color={router.asPath.match("/v3/home") ? "primary" : "secondary"} fullWidth>
                                 Home
                             </Button>
                         </Link>
                     </Stack.Item>
                     <Stack.Item>
                         <Link href="/v3/packs">
-                            <Button color="primary" onClick={() => console.log("Packs button clicked")} fullWidth>
+                            <Button color={router.asPath.match("/v3/packs") ? "primary" : "secondary"} fullWidth>
                                 Packs
                             </Button>
                         </Link>
                     </Stack.Item>
                     <Stack.Item>
                         <Link href="/v3/tests">
-                            <Button color="primary" onClick={()=>console.log("Tests button clicked")} fullWidth>
+                            <Button color={router.asPath.match("/v3/tests") ? "primary" : "secondary"} fullWidth>
                                 Tests
                             </Button>
                         </Link>
                     </Stack.Item>
                     <Stack.Item>
                         <Link href="/v3/analytics">
-                            <Button color="primary" onClick={()=>console.log("Analytics button clicked")} fullWidth>
+                            <Button color={router.asPath.match("/v3/analytics") ? "primary" : "secondary"} fullWidth>
                                 Analytics
                             </Button>
                         </Link>
                     </Stack.Item>
                     <Stack.Item>
                         <Link href="/v3/notebooks">
-                            <Button color="primary" onClick={()=>console.log("Notebooks button clicked")} fullWidth>
+                            <Button color={router.asPath.match("/v3/notebooks") ? "primary" : "secondary"} fullWidth>
                                 Notebooks
                             </Button>
                         </Link>
                     </Stack.Item>
                     <Stack.Item>
                         <Link href="/v3/profile">
-                            <Button color="primary" onClick={()=>console.log("Profile button clicked")} fullWidth>
+                            <Button color={router.asPath.match("/v3/profile") ? "primary" : "secondary"} fullWidth>
                                 Profile
                             </Button>
                         </Link>
