@@ -1,9 +1,16 @@
 .navbar{
     position:fixed;
     width:220px;
+    gap:2rem
 }
 
 /* width_of_nav_in_Navigation_Component */
 .navWidth{
     width: 210px;
+}
+
+.navLinkContainer{
+    padding: 0;
+    /* padding-top: 1rem; */
+    width: 90%;
 }

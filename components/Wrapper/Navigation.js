@@ -6,14 +6,14 @@ const Navigation = () => {
     return (
         <Frame
             className={style.navbar}
-            padding={0}
+            padding={[6,0]}
             height="100vh"
             // backgroundColor="positive-faded"
             borderColor="positive-faded"
             align="center"
         >
             <Image src="/Icon/Logo.svg" alt="Vercel Logo" width="50px" />
-            <ActionBar position='top'>
+            <ActionBar className={style.navLinkContainer}>
                 <Stack>
                     <Stack.Item>
                         <Link href="/v3/home">
