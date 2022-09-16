@@ -1,0 +1,9 @@
+.navbar{
+    position:fixed;
+    width:220px;
+}
+
+/* width_of_nav_in_Navigation_Component */
+.navWidth{
+    width: 210px;
+}
