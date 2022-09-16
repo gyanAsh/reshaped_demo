@@ -37,19 +37,26 @@ const Navigation = () => {
                         </Link>
                     </Stack.Item>
                     <Stack.Item>
-                        <Button color="primary" onClick={()=>console.log("Analytics button clicked")} fullWidth>
-                            Analytics
-                        </Button>
+                        <Link href="/v3/analytics">
+                            <Button color="primary" onClick={()=>console.log("Analytics button clicked")} fullWidth>
+                                Analytics
+                            </Button>
+                        </Link>
                     </Stack.Item>
                     <Stack.Item>
-                        <Button color="primary" onClick={()=>console.log("Notebooks button clicked")} fullWidth>
-                            Notebooks
-                        </Button>
+                        <Link href="/v3/notebooks">
+                            <Button color="primary" onClick={()=>console.log("Notebooks button clicked")} fullWidth>
+                                Notebooks
+                            </Button>
+                        </Link>
                     </Stack.Item>
                     <Stack.Item>
-                        <Button color="primary" onClick={()=>console.log("Profile button clicked")} fullWidth>
-                            Profile
-                        </Button>
+                        <Link href="/v3/profile">
+                            <Button color="primary" onClick={()=>console.log("Profile button clicked")} fullWidth>
+                                Profile
+                            </Button>
+                        </Link>
+                        
                     </Stack.Item>
                 </Stack>
             </ActionBar>

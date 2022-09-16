@@ -2,12 +2,12 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Button, Container, Frame, Text, Stack } from "reshaped";
 
-const Packs = () => {
+const Tests = () => {
   return (
     <div >
       <Head>
-        <title>Packs - Quizrr</title>
-        <meta name="description" content="Test package of Quizrr Platform" />
+        <title>Test - Quizrr</title>
+        <meta name="description" content="Tests offered by Quizrr Platform" />
         <link rel="icon" href="../Icon/Logo.svg" />
       </Head>
 
@@ -41,4 +41,4 @@ const Packs = () => {
   )
 }
 
-export default Packs
+export default Tests
