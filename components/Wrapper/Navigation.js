@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link'
+// import Image from 'next/image'
 import { ActionBar, Button, Image, Frame, Stack } from "reshaped"
 import style from '../../styles/Navigation.module.css'
 const Navigation = () => {
@@ -17,7 +18,9 @@ const Navigation = () => {
             align="center"
         >
             <Link href="/v3/home">
-                <Image src="/Icon/Logo.svg" alt="Vercel Logo" width="50px" />
+                <Button variant="ghost">
+                    <Image src="/Icon/Logo.svg" alt="Vercel Logo" width="50px" />
+                </Button>
             </Link>
             
             <ActionBar className={style.navLinkContainer}>
@@ -38,7 +41,7 @@ const Navigation = () => {
                     </Stack.Item>
                     <Stack.Item>
                         <Link href="/v3/tests">
-                            <Button color={path==="v3/tests" ? "primary" : "disabled"}  variant={path==="v3/tests" ?  "" :"outline" } fullWidth>
+                            <Button color={path==="/v3/tests" ? "primary" : "disabled"}  variant={path==="/v3/tests" ?  "" :"outline" } fullWidth>
                                 Tests
                             </Button>
                         </Link>
