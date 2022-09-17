@@ -4,6 +4,7 @@ import { ActionBar, Button, Image, Frame, Stack } from "reshaped"
 import style from '../../styles/Navigation.module.css'
 const Navigation = () => {
     const router = useRouter();
+    console.log(router.asPath);
     return (
         <Frame
             className={style.navbar}
@@ -21,42 +22,42 @@ const Navigation = () => {
                 <Stack>
                     <Stack.Item>
                         <Link href="/v3/home">
-                            <Button  color={router.asPath.match("/v3/home") ? "primary" : "neutral"} fullWidth>
+                            <Button  color={router.asPath.match(/\/v3\/home/) ? "primary" : "disabled"} fullWidth>
                                 Home
                             </Button>
                         </Link>
                     </Stack.Item>
                     <Stack.Item>
                         <Link href="/v3/packs">
-                            <Button color={router.asPath.match("/v3/packs") ? "primary" : "neutral"} fullWidth>
+                            <Button color={router.asPath.match(/\/v3\/packs/) ? "primary" : "disabled"} fullWidth>
                                 Packs
                             </Button>
                         </Link>
                     </Stack.Item>
                     <Stack.Item>
                         <Link href="/v3/tests">
-                            <Button color={router.asPath.match("/v3/tests") ? "primary" : "neutral"} fullWidth>
+                            <Button color={router.asPath.match(/\/v3\/tests/) ? "primary" : "disabled"} fullWidth>
                                 Tests
                             </Button>
                         </Link>
                     </Stack.Item>
                     <Stack.Item>
                         <Link href="/v3/analytics">
-                            <Button color={router.asPath.match("/v3/analytics") ? "primary" : "neutral"} fullWidth>
+                            <Button color={router.asPath.match(/\/v3\/analytics/) ? "primary" : "disabled"} fullWidth>
                                 Analytics
                             </Button>
                         </Link>
                     </Stack.Item>
                     <Stack.Item>
                         <Link href="/v3/notebooks">
-                            <Button color={router.asPath.match("/v3/notebooks") ? "primary" : "neutral"} fullWidth>
+                            <Button color={router.asPath.match(/\/v3\/notebooks/) ? "primary" : "neutral"} fullWidth>
                                 Notebooks
                             </Button>
                         </Link>
                     </Stack.Item>
                     <Stack.Item>
                         <Link href="/v3/profile">
-                            <Button color={router.asPath.match("/v3/profile") ? "primary" : "neutral"} fullWidth>
+                            <Button color={router.asPath.match(/\/v3\/profile/) ? "primary" : "neutral"} fullWidth>
                                 Profile
                             </Button>
                         </Link>
