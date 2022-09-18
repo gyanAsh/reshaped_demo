@@ -27,7 +27,7 @@ const Navigation = () => {
                 <Stack>
                     <Stack.Item>
                         <Link href="/v3/home">
-                            <Button  color={path === "/v3/home" ? "primary" : "disabled" } variant={path === "/v3/home" ?  "" :"outline" } fullWidth>
+                            <Button  color={path === "/v3/home" ? "primary" : "disabled" } variant={path === "/v3/home"?  "" :"outline" } fullWidth>
                                 Home
                             </Button>
                         </Link>
