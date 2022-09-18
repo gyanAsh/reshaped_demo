@@ -14,3 +14,9 @@
     padding-top: 1rem;
     width: 90%;
 }
+
+.inActive{
+    background-color:transparent;
+    border-color:var(--rs-color-border-primary);
+    border-radius:var(--rs-unit-radius-small);
+}
