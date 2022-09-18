@@ -15,13 +15,45 @@ const Navigation = () => {
     else
         setPath(null);
     }, [pathInfo])
+
+    const fakeApi = [
+        {
+            id:1,
+            name: "Home",
+            href:"/v3/home"
+        },
+        {
+            id:2,
+            name: "Packs",
+            href:"/v3/packs"
+        },
+        {
+            id:3,
+            name: "Tests",
+            href:"/v3/tests"
+        },
+        {
+            id:4,
+            name: "Analytics",
+            href:"/v3/analytics"
+        },
+        {
+            id:5,
+            name: "Notebooks",
+            href:"/v3/notebooks"
+        },
+        {
+            id:6,
+            name: "Profile",
+            href:"/v3/profile"
+        },
+    ]
     
     return (
         <Frame
             className={style.navbar}
             padding={[6,0]}
             height="100vh"
-            // backgroundColor="positive-faded"
             borderColor="neutral-faded"
             align="center"
         >
@@ -36,72 +68,19 @@ const Navigation = () => {
             </Tooltip>
             <ActionBar className={style.navLinkContainer}>
                 <Stack>
-                    <Tooltip text="Home" position='end'>
-                        { (msg)=> (
-                        <Stack.Item attributes={msg}>
-                            <Link href="/v3/home">
-                                <Button  color={path === "/v3/home" ? "primary" : "disabled" } variant={path === "/v3/home"?  "" :"outline" } fullWidth>
-                                    Home
-                                </Button>
-                            </Link>
-                        </Stack.Item>
-                        )}
-                    </Tooltip>
-                    <Tooltip text="Packs" position='end'>
-                        { (msg)=> (
-                        <Stack.Item attributes={msg}>
-                            <Link href="/v3/packs">
-                                <Button color={path === "/v3/packs"? "primary" : "disabled"}  variant={path === "/v3/packs"?  "" :"outline" } fullWidth>
-                                    Packs
-                                </Button>
-                            </Link>
-                        </Stack.Item>
-                        )}
-                    </Tooltip>
-                    <Tooltip text="Tests" position='end'>
-                        { (msg)=> (
-                        <Stack.Item attributes={msg}>
-                            <Link href="/v3/tests">
-                                <Button color={path==="/v3/tests" ? "primary" : "disabled"}  variant={path==="/v3/tests" ?  "" :"outline" } fullWidth>
-                                    Tests
-                                </Button>
-                            </Link>
-                        </Stack.Item>
-                        )}
-                    </Tooltip>
-                    <Tooltip text="Analytics" position='end'>
-                        { (msg)=> (
-                        <Stack.Item attributes={msg}>
-                            <Link href="/v3/analytics">
-                                <Button color={path==="/v3/analytics" ? "primary" : "disabled"}  variant={path==="/v3/analytics" ?  "" :"outline" } fullWidth>
-                                    Analytics
-                                </Button>
-                            </Link>
-                        </Stack.Item>
-                        )}
-                    </Tooltip>
-                    <Tooltip text="Notebooks" position='end'>
-                        { (msg)=> (
-                        <Stack.Item attributes={msg}>
-                            <Link href="/v3/notebooks">
-                                <Button color={path=== "/v3/notebooks" ? "primary" : "neutral"}  variant={path=== "/v3/notebooks" ?  "" :"outline" } fullWidth>
-                                    Notebooks
-                                </Button>
-                            </Link>
-                        </Stack.Item>
-                        )}
-                    </Tooltip>
-                    <Tooltip text="Profile" position='end'>
-                        { (msg)=> (
-                        <Stack.Item attributes={msg}>
-                            <Link href="/v3/profile">
-                                <Button color={path=== "/v3/profile" ? "primary" : "neutral"}  variant={path=== "/v3/profile" ?  "" :"outline" } fullWidth>
-                                    Profile
-                                </Button>
-                            </Link>
-                        </Stack.Item>
-                        )}
-                    </Tooltip>
+                    {fakeApi && fakeApi.map(navLink => (
+                        <Tooltip text={navLink.name} position='end'>
+                                { (msg)=> (
+                                <Stack.Item attributes={msg} key={navLink.id}>
+                                    <Link href={navLink.href}>
+                                        <Button color={path === navLink.href ? "primary" : "neutral"}  variant={path=== navLink.href ?  "" :"outline" } fullWidth>
+                                            {navLink.name}
+                                        </Button>
+                                    </Link>
+                                </Stack.Item>
+                                )}
+                        </Tooltip>
+                    ))}
                 </Stack>
             </ActionBar>
         </Frame>
