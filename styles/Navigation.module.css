@@ -16,7 +16,5 @@
 }
 
 .inActive{
-    background-color:transparent;
-    border:1px solid red;
-    border-radius:var(--rs-unit-radius-small);
+    background-color:red;
 }
