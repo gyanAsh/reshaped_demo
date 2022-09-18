@@ -61,7 +61,7 @@ const Navigation = () => {
                 { (msg)=> (
                     <Link href="/v3/home">
                         <Button variant="ghost" attributes={msg}>
-                            <Image src="/Icon/Logo.svg" alt="Vercel Logo" width="50px" />
+                            <Image src="/Icon/Logo.svg" alt="Quizrr Logo" width="50px" />
                         </Button>
                     </Link>
                 )}

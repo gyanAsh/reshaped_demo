@@ -4,7 +4,12 @@
   margin: 0;
   /* outline: 1px solid limegreen !important; */
 }
-
+:root{
+  --purple:#A16AE8;
+  --blue:#4120A9;
+  --peri:#A1A9FE;
+  --rose:#F6D4D2;
+}
 ::-webkit-scrollbar {
   width: 0.75em;
 }
