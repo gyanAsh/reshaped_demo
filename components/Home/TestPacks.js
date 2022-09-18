@@ -43,14 +43,13 @@ const TestPacks = () => {
     ];
 
   return (
-      <Container align="start" justify="center">
+      <Container className={style.packsDisplayContainer} align="start" justify="center">
           <Text variant="featured-3">Your Test Series Packs</Text>
-          <Stack direction="row">
+          <Stack direction="row" gap={6} >
           {fakeApi && fakeApi.map(pack => (
-            <Stack.Item wrap className={style.cardContainer}>
-              <Container padding={2} >
-                <Card padding={2} key={pack.id}>
-                    <Stack direction="row" align="center" justify="center">
+            <Stack.Item wrap className={style.cardContainer} key={pack.id}>
+                <Card padding={2} className={style.card} >
+                    <Stack direction="row" align="center" justify="start">
                     <Stack.Item>
                         <AspectRatio ratio={4 / 4}>
                             <Image src={pack.img} alt="Exam Logo" />
@@ -64,12 +63,7 @@ const TestPacks = () => {
                     </Stack>
                     
                     <ActionBar>
-                        <Stack gap={5} direction="row" justify="center">
-                        <Stack.Item>
-                            <Button>
-                                View Test Series
-                            </Button>
-                            </Stack.Item>
+                        <Stack gap={5} direction="row" justify="end">
                             <Stack.Item>
                             <Button>
                                 View Test Series
@@ -78,7 +72,6 @@ const TestPacks = () => {
                         </Stack>
                     </ActionBar>  
                 </Card>
-              </Container>
               </Stack.Item>
           ))}
           </Stack>

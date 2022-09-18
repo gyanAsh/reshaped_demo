@@ -4,6 +4,17 @@
 .mainTitle>span{
   color:var(--rs-color-background-primary);
 }
+.packsDisplayContainer{
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+  padding-top: 2rem;
+}
 .cardContainer{
-  width:clamp(350px,1rem + 5vw,650px);
+  width:450px;
+  min-width: 350px;
+}
+.card:hover{
+  transition-duration: 0.2s;
+  box-shadow: var(--rs-shadow-elevated);
 }
