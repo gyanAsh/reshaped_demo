@@ -17,6 +17,6 @@
 
 .inActive{
     background-color:transparent;
-    border-color:var(--rs-color-border-primary);
+    border-color:red;
     border-radius:var(--rs-unit-radius-small);
 }
