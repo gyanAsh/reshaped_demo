@@ -1,7 +1,7 @@
 import { useState,useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link'
-import { ActionBar, Button, Image, Frame, Stack,Tooltip  } from "reshaped"
+import { Container, Button, Image, Frame, Stack,Tooltip  } from "reshaped"
 import style from '../../styles/Navigation.module.css'
 
 const Navigation = () => {
@@ -66,14 +66,14 @@ const Navigation = () => {
                     </Link>
                 )}
             </Tooltip>
-            <ActionBar className={style.navLinkContainer}>
+            <Container className={style.navLinkContainer}>
                 <Stack>
                     {fakeApi && fakeApi.map(navLink => (
                         <Tooltip text={navLink.name} key={navLink.id} position='end'>
                                 { (msg)=> (
                                 <Stack.Item attributes={msg} >
                                     <Link href={navLink.href}>
-                                        <Button color={path === navLink.href ? "primary" : "neutral"}  className={path=== navLink.href ?  "" :style.inActive } fullWidth>
+                                        <Button color={path === navLink.href ? "primary" : "neutral"}  variant={path=== navLink.href ?  "" :"outline" } fullWidth>
                                             {navLink.name}
                                         </Button>
                                     </Link>
@@ -82,7 +82,7 @@ const Navigation = () => {
                         </Tooltip>
                     ))}
                 </Stack>
-            </ActionBar>
+            </Container>
         </Frame>
         
       
