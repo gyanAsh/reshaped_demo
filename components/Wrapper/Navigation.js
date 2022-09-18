@@ -69,9 +69,9 @@ const Navigation = () => {
             <ActionBar className={style.navLinkContainer}>
                 <Stack>
                     {fakeApi && fakeApi.map(navLink => (
-                        <Tooltip text={navLink.name} position='end'>
+                        <Tooltip text={navLink.name} key={navLink.id} position='end'>
                                 { (msg)=> (
-                                <Stack.Item attributes={msg} key={navLink.id}>
+                                <Stack.Item attributes={msg} >
                                     <Link href={navLink.href}>
                                         <Button color={path === navLink.href ? "primary" : "neutral"}  variant={path=== navLink.href ?  "" :"outline" } fullWidth>
                                             {navLink.name}
