@@ -49,7 +49,7 @@ const TestPacks = () => {
           {fakeApi && fakeApi.map(pack => (
             <Stack.Item wrap className={style.cardContainer} key={pack.id}>
                 <Card padding={2} className={style.card} >
-                    <Stack direction="row" align="center" justify="start">
+                    <Stack direction="row" align="center" justify="start" >
                     <Stack.Item>
                         <AspectRatio ratio={4 / 4}>
                             <Image src={pack.img} alt="Exam Logo" />
@@ -61,7 +61,6 @@ const TestPacks = () => {
                         </Frame>  
                     </Stack.Item> 
                     </Stack>
-                    
                     <ActionBar>
                         <Stack gap={5} direction="row" justify="end">
                             <Stack.Item>

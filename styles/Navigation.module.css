@@ -1,20 +1,40 @@
 .navbar{
     position:fixed;
+    height:100vh;
     width:220px;
     gap:1rem;
 }
 
 /* width_of_nav_in_Navigation_Component */
+.isRow{
+    display:flex;
+    flex-direction:row;
+}
 .navWidth{
     width: 210px;
 }
+/* modal-toggle and modal start */
+
+.modalToggle{
+    display:none !important;
+
+}
+.modal{
+    display:none;
+}
+
+/* modal-toggle and modal :end */
 
 .navLinkContainer{
     padding: 0;
     padding-top: 1rem;
     width: 90%;
 }
-
+.navLinkContainerFull{
+    padding: 0;
+    padding-top: 1rem;
+    width: 90%;
+}
 button{
     cursor: pointer !important;
     display: inline-flex !important;
@@ -32,4 +52,32 @@ button{
 
 .btnBorder:hover{
     background-color: var(--rs-color-background-neutral) !important;
+}
+
+@media (--rs-viewport-s) {
+    .navbar{
+        height:10vh;
+        width:100vw;
+        flex-direction:row;
+        justify-content:space-between;
+    }
+    .isRow{
+        flex-direction:column;
+    }
+    .navWidth{
+        width: 100vw;
+        height:10vh;
+    }
+    .modalToggle{
+        display:inline-flex !important;
+        margin-left:1rem;
+    
+    }
+    .modal{
+        display:inline-flex;
+        width: 80% !important;
+    }
+    .navLinkContainerFull{
+        display: none!important;
+    }
 }

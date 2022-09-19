@@ -1,10 +1,11 @@
 import { useState,useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link'
-import { Container, Button, Image, Frame, Stack,Tooltip  } from "reshaped"
+import { Container, Button, Image, Frame, Stack, Tooltip, Modal, useToggle ,Dismissible} from "reshaped"
 import style from '../../styles/Navigation.module.css'
 
 const Navigation = () => {
+    const { activate, deactivate, active } = useToggle(false);
     const [path, setPath] = useState([]);
     const router = useRouter();
     const regex = /^(\/v3\/\b(home|packs|tests|analytics|notebooks|profile)\b)/;
@@ -53,10 +54,14 @@ const Navigation = () => {
         <Frame
             className={style.navbar}
             padding={[6,0]}
-            height="100vh"
             borderColor="neutral-faded"
             align="center"
         >
+            <Button className={style.modalToggle} onClick={activate}>
+                <Tooltip text="Menu" position='end'>
+                    {(msg)=><Image src='/Icon/Asset/menuBar.svg' width="15px" alt="Menu" attributes={msg}/> }
+                </Tooltip>
+            </Button>
             <Tooltip text="Home" position='end'>
                 { (msg)=> (
                     <Link href="/v3/home">
@@ -66,7 +71,28 @@ const Navigation = () => {
                     </Link>
                 )}
             </Tooltip>
-            <Container className={style.navLinkContainer}>
+            <Modal className={style.modal} active={active} onClose={deactivate} position="start" >
+                <Dismissible onClose={deactivate} closeAriaLabel="Close modal">
+                <Container className={style.navLinkContainer}>
+                    <Stack>
+                        {fakeApi && fakeApi.map(navLink => (
+                            <Tooltip text={navLink.name} key={navLink.id} position='end'>
+                                    { (msg)=> (
+                                    <Stack.Item attributes={msg} >
+                                        <Link href={navLink.href}>
+                                            <Button color={path === navLink.href ? "primary" : "neutral"}  className={path=== navLink.href ?  "" :style.btnBorder } fullWidth>
+                                                {navLink.name}
+                                            </Button>
+                                        </Link>
+                                    </Stack.Item>
+                                    )}
+                            </Tooltip>
+                        ))}
+                    </Stack>
+                </Container>
+                </Dismissible>
+            </Modal>
+            <Container className={style.navLinkContainerFull} >
                 <Stack>
                     {fakeApi && fakeApi.map(navLink => (
                         <Tooltip text={navLink.name} key={navLink.id} position='end'>

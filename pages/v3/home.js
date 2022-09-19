@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { Button, Container, Frame, Text, Stack } from "reshaped";
+import { Container, Frame } from "reshaped";
 import GreetingTitle from '../../components/Home/GreetingTitle';
 import TestPacks from '../../components/Home/TestPacks';
 
@@ -13,7 +13,7 @@ const Home = () => {
       </Head>
 
       <Frame padding={[8,3]}>
-        <Container>
+        <Container padding={0}>
           <GreetingTitle />
           <TestPacks/>
         </Container>
