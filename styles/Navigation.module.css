@@ -7,8 +7,8 @@
 
 /* width_of_nav_in_Navigation_Component */
 .isRow{
-    display:flex;
-    flex-direction:row;
+    display:flex !important;
+    flex-direction:row !important;
 }
 .navWidth{
     display: block !important;
