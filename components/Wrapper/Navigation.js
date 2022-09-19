@@ -56,6 +56,7 @@ const Navigation = () => {
             padding={[6,0]}
             borderColor="neutral-faded"
             align="center"
+            width="100%"
         >
             <Button className={style.modalToggle} onClick={activate}>
                 <Tooltip text="Menu" position='end'>
