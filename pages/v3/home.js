@@ -12,7 +12,7 @@ const Home = () => {
         <link rel="icon" href="../Icon/Logo.svg" />
       </Head>
 
-      <Frame height="100vh">
+      <Frame padding={[8,3]}>
         <Container>
           <GreetingTitle />
           <TestPacks/>
