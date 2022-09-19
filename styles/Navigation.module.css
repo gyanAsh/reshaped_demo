@@ -11,7 +11,7 @@
     flex-direction:row;
 }
 .navWidth{
-    width: 210px;
+    width: 210px !important;
 }
 /* modal-toggle and modal start */
 
@@ -65,7 +65,7 @@ button{
         flex-direction:column;
     }
     .navWidth{
-        width: 100vw;
+        width: 100vw !important;
         height:10vh;
     }
     .modalToggle{
