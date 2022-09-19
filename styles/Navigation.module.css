@@ -31,6 +31,7 @@
     width: 90%;
 }
 .navLinkContainerFull{
+    display:inline-block !important;
     padding: 0;
     padding-top: 1rem;
     width: 90%;
