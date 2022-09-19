@@ -16,11 +16,20 @@
 }
 
 button{
-    border-width: 1px !important;
     cursor: pointer !important;
     display: inline-flex !important;
     font-weight: var(--rs-font-weight-body-medium-2) !important;
     line-height: var(--rs-line-height-body-medium-2) !important;
     padding: calc(var(--rs-unit-x2) - 1px) calc(var(--rs-unit-x3) - 1px) !important;
     text-decoration: none !important;
-  }
+}
+
+.btnBorder{
+    border: 1px solid var(--rs-color-border-neutral-faded) !important;
+    background-color: var(--rs-color-background-base) !important;
+    color: var(--rs-color-foreground-neutral);
+}
+
+.btnBorder:hover{
+    background-color: var(--rs-color-background-neutral) !important;
+}
