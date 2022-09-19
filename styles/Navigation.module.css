@@ -1,5 +1,4 @@
 .navbar{
-    z-index: 100;
     position:fixed;
     height:100vh;
     width:220px;
@@ -59,6 +58,7 @@ button{
 
 @media (--rs-viewport-s) {
     .navbar{
+        z-index: 100;
         height:10vh;
         width:100%;
         flex-direction:row;
