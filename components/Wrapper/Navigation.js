@@ -53,7 +53,8 @@ const Navigation = () => {
     return (
         <Frame
             className={style.navbar}
-            padding={[6,0]}
+            padding={[6, 0]}
+            backgroundColor="page"
             borderColor="neutral-faded"
             align="center"
             width="100%"
