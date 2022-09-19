@@ -64,7 +64,7 @@ button{
         justify-content:space-between;
     }
     .isRow{
-        flex-direction:column;
+        flex-direction:column !important;
     }
     .navWidth{
         display: block !important;
