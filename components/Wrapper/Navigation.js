@@ -1,8 +1,7 @@
 import { useState,useEffect, Fragment } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link'
-import IconSvg from '../../public/Icon/Asset/penPaper.svg'
-import { Container, Button, Image, Frame, Stack, Tooltip, Modal, useToggle ,Dismissible, ActionBar, Avatar, Badge, Alert, Icon} from "reshaped"
+import { Container, Button, Image, Frame, Stack, Tooltip, Modal, useToggle ,Dismissible, ActionBar, Avatar, Badge, Alert} from "reshaped"
 import style from '../../styles/Navigation.module.css'
 
 const Navigation = () => {
@@ -147,10 +146,10 @@ const Notification = ({notifications}) => {
                     title="New Test Series"
                     color="primary"
                     actionsSlot={[
-                    <Link href="/v3/home"  variant="plain"><Button color="primary" onClick={deactivate}>View Test</Button></Link>,
-                    <Link href=""  onClick={() => {}} variant="plain"><Button color='critical' variant='outline'>Delete Notification</Button></Link>,
+                    <Link key={1} href="/v3/home"  variant="plain"><Button color="primary" onClick={deactivate}>View Test</Button></Link>,
+                    <Link key={2} href=""  onClick={() => {}} variant="plain"><Button color='critical' variant='outline'>Delete Notification</Button></Link>,
                 ]}>
-                    Don't forget to generate the new theme definition after updating to our latest
+                    Don&#39;t forget to generate the new theme definition after updating to our latest
                     release.
                 </Alert>
             </Modal>
