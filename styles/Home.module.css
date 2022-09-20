@@ -12,7 +12,7 @@
 }
 .cardContainer{
   width:450px;
-  min-width: 350px;
+  min-width: 250px;
 }
 .card:hover{
   transition-duration: 0.2s;
@@ -31,4 +31,12 @@
 
 .btn:hover{
   background-color: var(--rs-color-background-neutral-highlighted) !important;
+}
+
+@media (--rs-viewport-s) {
+  
+  .packsDisplayContainer{
+    padding: 0;
+    padding-top: 2rem;
+  }
 }
