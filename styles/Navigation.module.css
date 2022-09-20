@@ -65,7 +65,7 @@ button{
         height:10vh;
         width:100%;
         flex-direction:row;
-        justify-content:space-between;
+        justify-content:space-between !important;
     }
     .isRow{
         flex-direction:column !important;
@@ -77,8 +77,8 @@ button{
     }
     .modalToggle{
         display:inline-flex !important;
-        margin-left:1rem;
-    
+        width:33% !important;
+        border-top: 0 !important;
     }
     .modal{
         display:inline-flex;
@@ -88,12 +88,15 @@ button{
         display: none!important;
     }
     .notification{
-        padding: 0.5rem !important;
-        width: auto !important;
+        padding: 0.3rem !important;
+        width: 33% !important;
         border-top: 0 !important;
     }
     .notificationStack{
         display:flex !important;
         flex-direction: row !important;
+    }
+    .notificationModal{
+        width: 90% !important;
     }
 }

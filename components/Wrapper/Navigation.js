@@ -1,13 +1,13 @@
 import { useState,useEffect, Fragment } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link'
-import { Container, Button, Image, Frame, Stack, Tooltip, Modal, useToggle ,Dismissible, ActionBar, Avatar, Badge, Alert} from "reshaped"
+import { Container, Button, Image, Frame, Stack, Tooltip, Modal, useToggle ,Dismissible, ActionBar, Avatar, Badge, Alert, AspectRatio} from "reshaped"
 import style from '../../styles/Navigation.module.css'
 
 const Navigation = () => {
     const { activate, deactivate:deactivate, active } = useToggle(false);
     const [path, setPath] = useState([]);
-    const [notifications, setNotifications] = useState(2);
+    const [notifications, setNotifications] = useState(1);
     const router = useRouter();
     const regex = /^(\/v3\/\b(home|packs|tests|analytics|notebooks|profile)\b)/;
     let pathInfo = router.asPath.match(regex);
@@ -60,9 +60,12 @@ const Navigation = () => {
             align="center"
             width="100%"
         >
-            <Button className={style.modalToggle} onClick={activate}>
-                    <Image src='/Icon/Asset/menuBar.svg' width="15px" alt="Menu" />
-            </Button>
+            <ActionBar className={style.modalToggle}>
+                <Button onClick={activate}>
+                        <Image src='/Icon/Asset/menuBar.svg' width="15px" alt="Menu" />
+                </Button>    
+            </ActionBar>
+            
             <Tooltip text="Home" position='end'>
                 { (msg)=> (
                     <Link href="/v3/home">
@@ -121,37 +124,43 @@ const Notification = ({notifications}) => {
     return (
         <Fragment>
             <ActionBar size="large" className={style.notification}>
-                <Stack align="center" justify="centers" className={style.notificationStack}>
+                <Stack align="center" justify="center" className={style.notificationStack}>
                     <Stack.Item>
                         <Button variant='ghost' onClick={activate}>
                         <Badge.Container>
                             {notifications >0 && <Badge size="small" color="critical" rounded>
                             {notifications}    
                             </Badge>}
-                            <Image src='/Icon/Asset/notificationBell.svg' width='18px' height='18px' alt="Notification" />
+                            <AspectRatio ration={4/4}>
+                            <Image src='/Icon/Asset/notificationBell.svg' width={{s:'15px', l:'18px'}} alt="Notification" />
+                            </AspectRatio>
                         </Badge.Container>
                         </Button>
                     </Stack.Item>
                     <Stack.Item>
                         <Avatar
                             initials="Gy"
+                            size={10}
                             color="neutral"
-                            attributes={{ "aria-label": "Dmitry Belyaev" }}
+                            attributes={{ "aria-label": "Gyan Ashish Ekka" }}
                         />
                     </Stack.Item>
                 </Stack>
             </ActionBar>
-            <Modal active={active} onClose={deactivate} position="end">
-                <Alert
-                    title="New Test Series"
-                    color="primary"
-                    actionsSlot={[
-                    <Link key={1} href="/v3/home"  variant="plain"><Button color="primary" onClick={deactivate}>View Test</Button></Link>,
-                    <Link key={2} href=""  onClick={() => {}} variant="plain"><Button color='critical' variant='outline'>Delete Notification</Button></Link>,
-                ]}>
-                    Don&#39;t forget to generate the new theme definition after updating to our latest
-                    release.
-                </Alert>
+            <Modal className={style.notificationModal} active={active} onClose={deactivate} position="end">
+                <Dismissible onClose={deactivate} closeAriaLabel="Close modal" />
+                    <Frame padding={[2,0]}>
+                        <Alert
+                            title="New Test Series"
+                            color="primary"
+                            actionsSlot={[
+                            <Link key={1} href="/v3/tests"  variant="plain"><Button color="primary" onClick={deactivate}>View Test</Button></Link>,
+                            <Link key={2} href=""  onClick={() => {}} variant="plain"><Button color='critical' variant='outline'>Delete Notification</Button></Link>,
+                        ]}>
+                            Don&#39;t forget to generate the new theme definition after updating to our latest
+                            release.
+                        </Alert>    
+                    </Frame>
             </Modal>
         </Fragment>
     )
