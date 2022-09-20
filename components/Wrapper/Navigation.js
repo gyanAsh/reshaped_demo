@@ -1,11 +1,12 @@
-import { useState,useEffect } from 'react';
+import { useState,useEffect, Fragment } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link'
-import { Container, Button, Image, Frame, Stack, Tooltip, Modal, useToggle ,Dismissible, ActionBar, Avatar, Badge} from "reshaped"
+import IconSvg from '../../public/Icon/Asset/penPaper.svg'
+import { Container, Button, Image, Frame, Stack, Tooltip, Modal, useToggle ,Dismissible, ActionBar, Avatar, Badge, Alert, Icon} from "reshaped"
 import style from '../../styles/Navigation.module.css'
 
 const Navigation = () => {
-    const { activate, deactivate, active } = useToggle(false);
+    const { activate, deactivate:deactivate, active } = useToggle(false);
     const [path, setPath] = useState([]);
     const [notifications, setNotifications] = useState(2);
     const router = useRouter();
@@ -106,15 +107,31 @@ const Navigation = () => {
                     ))}
                 </Stack>
             </Container>
+            <Notification notifications={notifications}/>
+        </Frame>
+        
+      
+  )
+}
+
+export default Navigation
+
+const Notification = ({notifications}) => {
+    const { activate, deactivate, active } = useToggle(false);
+
+    return (
+        <Fragment>
             <ActionBar size="large" className={style.notification}>
                 <Stack align="center" justify="centers" className={style.notificationStack}>
                     <Stack.Item>
+                        <Button variant='ghost' onClick={activate}>
                         <Badge.Container>
                             {notifications >0 && <Badge size="small" color="critical" rounded>
                             {notifications}    
                             </Badge>}
                             <Image src='/Icon/Asset/notificationBell.svg' width='18px' height='18px' alt="Notification" />
                         </Badge.Container>
+                        </Button>
                     </Stack.Item>
                     <Stack.Item>
                         <Avatar
@@ -125,10 +142,18 @@ const Navigation = () => {
                     </Stack.Item>
                 </Stack>
             </ActionBar>
-        </Frame>
-        
-      
-  )
+            <Modal active={active} onClose={deactivate} position="end">
+                <Alert
+                    title="New Test Series"
+                    color="primary"
+                    actionsSlot={[
+                    <Link href="/v3/home"  variant="plain"><Button color="primary" onClick={deactivate}>View Test</Button></Link>,
+                    <Link href=""  onClick={() => {}} variant="plain"><Button color='critical' variant='outline'>Delete Notification</Button></Link>,
+                ]}>
+                    Don't forget to generate the new theme definition after updating to our latest
+                    release.
+                </Alert>
+            </Modal>
+        </Fragment>
+    )
 }
-
-export default Navigation
