@@ -60,9 +60,7 @@ const Navigation = () => {
             width="100%"
         >
             <Button className={style.modalToggle} onClick={activate}>
-                <Tooltip text="Menu" position='end'>
-                    {(msg)=><Image src='/Icon/Asset/menuBar.svg' width="15px" alt="Menu" attributes={msg}/> }
-                </Tooltip>
+                    <Image src='/Icon/Asset/menuBar.svg' width="15px" alt="Menu" />
             </Button>
             <Tooltip text="Home" position='end'>
                 { (msg)=> (
@@ -78,17 +76,13 @@ const Navigation = () => {
                 <Container className={style.navLinkContainer}>
                     <Stack>
                         {fakeApi && fakeApi.map(navLink => (
-                            <Tooltip text={navLink.name} key={navLink.id} position='end'>
-                                    { (msg)=> (
-                                    <Stack.Item attributes={msg} >
+                                    <Stack.Item key={navLink.id} >
                                         <Link href={navLink.href}>
                                             <Button onClick={deactivate} color={path === navLink.href ? "primary" : "neutral"}  className={path=== navLink.href ?  "" :style.btnBorder } fullWidth>
                                                 {navLink.name}
                                             </Button>
                                         </Link>
                                     </Stack.Item>
-                                    )}
-                            </Tooltip>
                         ))}
                     </Stack>
                 </Container>
