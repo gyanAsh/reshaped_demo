@@ -55,6 +55,9 @@ button{
 .btnBorder:hover{
     background-color: var(--rs-color-background-neutral) !important;
 }
+.notification{
+    width: 90%;
+}
 
 @media (--rs-viewport-s) {
     .navbar{
@@ -83,5 +86,15 @@ button{
     }
     .navLinkContainerFull{
         display: none!important;
+    }
+    .notification{
+        padding: 0.5rem;
+        width: auto;
+        border-top: 0;
+        /* border-left: 1px solid var(--rs-color-border-neutral-faded); */
+    }
+    .notificationStack{
+        display:flex;
+        flex-direction: row;
     }
 }

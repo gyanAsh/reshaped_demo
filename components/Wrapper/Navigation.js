@@ -1,12 +1,13 @@
 import { useState,useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link'
-import { Container, Button, Image, Frame, Stack, Tooltip, Modal, useToggle ,Dismissible} from "reshaped"
+import { Container, Button, Image, Frame, Stack, Tooltip, Modal, useToggle ,Dismissible, ActionBar, Avatar, Badge} from "reshaped"
 import style from '../../styles/Navigation.module.css'
 
 const Navigation = () => {
     const { activate, deactivate, active } = useToggle(false);
     const [path, setPath] = useState([]);
+    const [notifications, setNotifications] = useState(2);
     const router = useRouter();
     const regex = /^(\/v3\/\b(home|packs|tests|analytics|notebooks|profile)\b)/;
     let pathInfo = router.asPath.match(regex);
@@ -105,6 +106,25 @@ const Navigation = () => {
                     ))}
                 </Stack>
             </Container>
+            <ActionBar size="large" className={style.notification}>
+                <Stack align="center" justify="centers" className={style.notificationStack}>
+                    <Stack.Item>
+                        <Badge.Container>
+                            {notifications >0 && <Badge size="small" color="critical" rounded>
+                            {notifications}    
+                            </Badge>}
+                            <Image src='/Icon/Asset/notificationBell.svg' width='18px' height='18px' alt="Notification" />
+                        </Badge.Container>
+                    </Stack.Item>
+                    <Stack.Item>
+                        <Avatar
+                            initials="Gy"
+                            color="neutral"
+                            attributes={{ "aria-label": "Dmitry Belyaev" }}
+                        />
+                    </Stack.Item>
+                </Stack>
+            </ActionBar>
         </Frame>
         
       
