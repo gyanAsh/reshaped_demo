@@ -12,7 +12,7 @@ const TestPacks = () => {
         {
             id: 2,
             img: "/Icon/Exams/jee-main.png",
-            title:"All India MathonGo Big Open Test 2023 (AIMVOT)"
+            title:"All India MathonGo Big Open Test 2023 (AIMBOT)"
         },
         {
             id: 3,

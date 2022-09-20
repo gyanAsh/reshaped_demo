@@ -82,7 +82,7 @@ const Navigation = () => {
                                     { (msg)=> (
                                     <Stack.Item attributes={msg} >
                                         <Link href={navLink.href}>
-                                            <Button color={path === navLink.href ? "primary" : "neutral"}  className={path=== navLink.href ?  "" :style.btnBorder } fullWidth>
+                                            <Button onClick={deactivate} color={path === navLink.href ? "primary" : "neutral"}  className={path=== navLink.href ?  "" :style.btnBorder } fullWidth>
                                                 {navLink.name}
                                             </Button>
                                         </Link>
