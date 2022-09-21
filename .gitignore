@@ -37,3 +37,6 @@ next-env.d.ts
 
 # ./vendor/reshaped-react-v1.5.0.tgz
 # /vendor
+
+#reshaped.config.js file not ready for production
+reshaped.config.js

@@ -62,7 +62,7 @@ const TestPacksCards = () => {
                   <ActionBar size="medium" >
                       <Stack  gap={{s:1,l:5}} direction="row" justify="end">
                       <Stack.Item>
-                          <Button className={style.btn}>
+                          <Button variant="outline" className={style.btn}>
                               View Test
                           </Button>
                       </Stack.Item>
