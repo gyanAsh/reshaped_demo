@@ -24,6 +24,7 @@
     line-height: var(--rs-line-height-body-medium-2) !important;
     padding: calc(var(--rs-unit-x2) - 1px) calc(var(--rs-unit-x3) - 1px) !important;
     text-decoration: none !important;
+    border: 1px solid var(--rs-color-border-neutral-faded) !important;
   }
   
   .btn:hover{
