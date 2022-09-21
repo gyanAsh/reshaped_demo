@@ -1,7 +1,7 @@
 import Head from 'next/head'
-import { Container, Frame } from "reshaped";
 import GreetingTitle from '../../components/Home/GreetingTitle';
 import TestPacks from '../../components/Home/TestPacks';
+import PagePadding from '../../components/Wrapper/PagePadding';
 
 const Home = () => {
   return (
@@ -12,12 +12,10 @@ const Home = () => {
         <link rel="icon" href="../Icon/Logo.svg" />
       </Head>
 
-      <Frame padding={[8,3]}>
-        <Container padding={0}>
-          <GreetingTitle />
-          <TestPacks/>
-        </Container>
-      </Frame>
+      <PagePadding>
+        <GreetingTitle />
+        <TestPacks/>
+      </PagePadding>
     </div>
   )
 }
