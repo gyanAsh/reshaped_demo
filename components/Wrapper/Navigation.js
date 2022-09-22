@@ -1,8 +1,9 @@
 import { useState,useEffect, Fragment } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link'
-import { Container, Button, Image, Frame, Stack, Tooltip, Modal, useToggle ,Dismissible, ActionBar, Avatar, Badge, Alert, AspectRatio} from "reshaped"
+import { Container, Button, Image, Frame, Stack, Tooltip, Modal, useToggle ,Dismissible, ActionBar, Avatar, Badge, Alert, AspectRatio, Icon} from "reshaped"
 import style from '../../styles/Navigation.module.css'
+import { AppLogo, Notify } from '../Assets/Icons';
 
 const Navigation = () => {
     const { activate, deactivate:deactivate, active } = useToggle(false);
@@ -70,7 +71,7 @@ const Navigation = () => {
                 { (msg)=> (
                     <Link href="/v3/home">
                         <Button variant="ghost" attributes={msg}>
-                            <Image src="/Icon/Logo.svg" alt="Quizrr Logo" width="50px" />
+                            <Icon svg={AppLogo} size={14} color="primary" />
                         </Button>
                     </Link>
                 )}
@@ -131,9 +132,7 @@ const Notification = ({notifications}) => {
                             {notifications >0 && <Badge size="small" color="critical" rounded>
                             {notifications}    
                             </Badge>}
-                            <AspectRatio ration={4/4}>
-                            <Image src='/Icon/Asset/notificationBell.svg' width={{s:'15px', l:'18px'}} alt="Notification" />
-                            </AspectRatio>
+                                <Icon svg={Notify} size={5} />
                         </Badge.Container>
                         </Button>
                     </Stack.Item>
