@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import Link from 'next/link'
 import { Container, Button, Image, Frame, Stack, Tooltip, Modal, useToggle ,Dismissible, ActionBar, Avatar, Badge, Alert, AspectRatio, Icon} from "reshaped"
 import style from '../../styles/Navigation.module.css'
-import { AppLogo, Notify } from '../Assets/Icons';
+import { AppLogo, MenuBar, Notify } from '../Assets/Icons';
 
 const Navigation = () => {
     const { activate, deactivate:deactivate, active } = useToggle(false);
@@ -63,7 +63,7 @@ const Navigation = () => {
         >
             <ActionBar className={style.modalToggle}>
                 <Button onClick={activate}>
-                        <Image src='/Icon/Asset/menuBar.svg' width="15px" alt="Menu" />
+                        <Icon svg={MenuBar} size={5} />
                 </Button>    
             </ActionBar>
             
