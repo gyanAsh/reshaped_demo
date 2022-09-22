@@ -1,12 +1,14 @@
-import {Frame,Container} from 'reshaped'
+import {Frame} from 'reshaped'
+import DarkMode from '../DarkMode';
 
 const PagePadding = ({ children }) => {
     return (
-    <Frame padding={[8,3]}>
-        <Container padding={0}>
+      <Frame padding={[2,3]}>
+        <DarkMode/>
+        <Frame padding={[7,2]}>
           {children}
-        </Container>
-    </Frame>
+        </Frame>
+      </Frame>
     )
 }
 
