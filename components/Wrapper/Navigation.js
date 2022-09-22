@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import Link from 'next/link'
 import { Container, Button, Image, Frame, Stack, Tooltip, Modal, useToggle ,Dismissible, ActionBar, Avatar, Badge, Alert, AspectRatio, Icon} from "reshaped"
 import style from '../../styles/Navigation.module.css'
-import { AppLogo, MenuBar, Notify } from '../Assets/Icons';
+import { AppLogo, MenuBar, Notify, PenPaperNotes } from '../Assets/Icons';
 
 const Navigation = () => {
     const { activate, deactivate:deactivate, active } = useToggle(false);
@@ -150,11 +150,12 @@ const Notification = ({notifications}) => {
                 <Dismissible onClose={deactivate} closeAriaLabel="Close modal" />
                     <Frame padding={[2,0]}>
                         <Alert
+                            icon={PenPaperNotes}
                             title="New Test Series"
                             color="primary"
                             actionsSlot={[
                             <Link key={1} href="/v3/tests"  variant="plain"><Button color="primary" onClick={deactivate}>View Test</Button></Link>,
-                            <Link key={2} href=""  onClick={() => {}} variant="plain"><Button color='critical' variant='outline'>Delete Notification</Button></Link>,
+                            <Link key={2} href="/v3/tests"  variant="plain"><Button onClick={deactivate} color='critical' variant='outline'>Delete Notification</Button></Link>,
                         ]}>
                             Don&#39;t forget to generate the new theme definition after updating to our latest
                             release.
