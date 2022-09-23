@@ -1,0 +1,13 @@
+
+			[data-rs-theme="quizrr-light"], [data-rs-theme="quizrr-dark"] {
+					
+			}
+		
+			[data-rs-theme="quizrr-light"] {
+					--rs-color-foreground-primary: #2E005B;
+			}
+		
+			[data-rs-theme="quizrr-dark"] {
+					--rs-color-foreground-primary: #ffffff;
+			}
+		

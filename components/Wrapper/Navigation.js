@@ -1,7 +1,7 @@
 import { useState,useEffect, Fragment } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link'
-import { Container, Button, Image, Frame, Stack, Tooltip, Modal, useToggle ,Dismissible, ActionBar, Avatar, Badge, Alert, AspectRatio, Icon} from "reshaped"
+import { Container, Button, Frame, Stack, Tooltip, Modal, useToggle ,Dismissible, ActionBar, Avatar, Badge, Alert, Icon, Reshaped, ThemeProvider} from "reshaped"
 import style from '../../styles/Navigation.module.css'
 import { AppLogo, MenuBar, Notify, PenPaperNotes } from '../Assets/Icons';
 
@@ -70,9 +70,11 @@ const Navigation = () => {
             <Tooltip text="Home" position='end'>
                 { (msg)=> (
                     <Link href="/v3/home">
-                        <Button variant="ghost" attributes={msg}>
-                            <Icon svg={AppLogo} size={14} color="primary" />
-                        </Button>
+                            <Button variant="ghost" attributes={msg}>
+                                <ThemeProvider theme="quizrr">
+                                <Icon svg={AppLogo} size={14} color="primary" />    
+                                </ThemeProvider>
+                            </Button>    
                     </Link>
                 )}
             </Tooltip>
