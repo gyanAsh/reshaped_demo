@@ -33,7 +33,7 @@ const PackDetails = () => {
                                     {packBought.length > 0 && packBought.map(pack => (
                                         <DropdownMenu.Item key={pack.id}><Text variant='body-medium-1' color="primary">{pack.packName}</Text></DropdownMenu.Item>
                                     ))}
-                                    {packBought.length === 0 && <Card padding={1}><Text variant='body-1' color='critical'>You've not purchased any test series packs. 🙄</Text></Card>}
+                                    {packBought.length === 0 && <Card padding={1}><Text variant='body-1' color='critical'>You&#39;ve not purchased any test series packs. 🙄</Text></Card>}
                                 </DropdownMenu.Section>
                                 <DropdownMenu.Section>
                                     <DropdownMenu.Item>
