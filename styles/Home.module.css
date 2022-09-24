@@ -1,9 +1,6 @@
 .mainTitle{
   color:var(--rs-color-background-primary-highlighted);
 }
-.mainTitle>span{
-  color:var(--rs-color-background-primary);
-}
 .packsDisplayContainer{
   display:flex;
   flex-direction:column;
