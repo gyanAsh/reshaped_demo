@@ -5,9 +5,9 @@ import { Moon, Sun } from '../../Assets/Icons';
 const DarkMode = () => {
     const { setColorMode, colorMode } = useTheme();
     return (
-        <Stack direction="row" align="center" justify="end">
+        <Stack direction="row" align="center" justify="end" height="50px">
             <Icon svg={Sun} size={6}/>
-            <Switch name="changeTheme" checked={colorMode === 'dark'?true:false} onChange={() => setColorMode(colorMode === 'dark' ? 'light' : 'dark')} />
+            <Switch name="changeTheme" onChange={() => setColorMode(colorMode === 'dark' ? 'light' : 'dark')} />
             <Icon svg={Moon} size={5}/>
         </Stack>
         

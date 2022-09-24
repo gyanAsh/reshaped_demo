@@ -24,7 +24,7 @@ const PackDetails = () => {
                     <Text variant="body-medium-2" color="neutral-faded"><Text variant='body-strong-1' as="span">{5}</Text> PART TESTS TESTS  .  <Text variant='body-strong-1' as="span">{30}</Text> FULL TESTS TESTS  .  <Text variant='body-strong-1' as="span">{80}</Text> PREVIOUS YEAR PAPERS TESTS</Text>
                     <DropdownMenu>
                         <DropdownMenu.Trigger>
-                        {(attributes) => <Button startIcon={ChangeIcon} attributes={attributes}>Change Pack</Button>}
+                        {(attributes) => <Button className={style.btn} startIcon={ChangeIcon} attributes={attributes}>Change Pack</Button>}
                         </DropdownMenu.Trigger>
                         <DropdownMenu.Content>
                             <Frame padding={2}>
@@ -46,8 +46,6 @@ const PackDetails = () => {
                                     </DropdownMenu.Item>
                                 </DropdownMenu.Section>    
                             </Frame>
-                            
-                            
                         </DropdownMenu.Content>
                     </DropdownMenu>
                 </Stack>

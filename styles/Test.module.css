@@ -1,0 +1,13 @@
+.btn{
+    background-color: var(--rs-color-background-neutral) !important;
+    cursor: pointer !important;
+    display: inline-flex !important;
+    font-weight: var(--rs-font-weight-body-medium-2) !important;
+    line-height: var(--rs-line-height-body-medium-2) !important;
+    padding: calc(var(--rs-unit-x2) - 1px) calc(var(--rs-unit-x3) - 1px) !important;
+    text-decoration: none !important;
+  }
+  
+.btn:hover{
+  background-color: var(--rs-color-background-neutral-highlighted) !important;
+}
