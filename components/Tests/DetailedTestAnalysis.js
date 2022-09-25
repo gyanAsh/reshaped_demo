@@ -25,7 +25,7 @@ const DetailedTestAnalysis = () => {
     ]
 
   return (
-    <Frame padding={[4,0]}>
+    <Frame padding={[4,4]}>
           <Text variant="featured-2" >Detailed Test Analysis</Text>
           <Frame padding={[2, 0]}>
             <Stack gap={5} direction="row" justify={{ s: "center", l: "start" }}>

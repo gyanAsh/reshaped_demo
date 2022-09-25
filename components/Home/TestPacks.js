@@ -43,7 +43,7 @@ const TestPacks = () => {
 
   return (
       <Container className={style.packsDisplayContainer} align="start" justify="center">
-          <Text variant="featured-3">Your Test Series Packs</Text>
+          <Text variant="featured-2">Your Test Series Packs</Text>
           <Stack direction="row" gap={6} >
           {fakeApi && fakeApi.map(pack => (
             <Stack.Item wrap className={style.cardContainer} key={pack.id}>
