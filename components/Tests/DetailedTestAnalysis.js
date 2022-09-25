@@ -1,4 +1,4 @@
-import { Card, Frame, Icon, Image, Link, Stack, Text } from "reshaped"
+import { AspectRatio, Card, Frame, Icon, Image, Link, Overlay, Stack, Text } from "reshaped"
 const DetailedTestAnalysis = () => {
 
     const fakeApi = [
@@ -33,8 +33,14 @@ const DetailedTestAnalysis = () => {
                     <Stack.Item key={sub.id}>
                         <Link variant="plain">
                             <Card padding={0}>
-                                <Image borderRadius="medium" src={sub.img} alt={sub.name} width={{ s: "calc(var(--rs-unit-x3) * 20)", l: "320px" }} />
-                                <Text variant="body-1" color="primary" align="center">View Detailed Report : {sub.name}</Text>
+                            <Overlay
+                                position="bottom"
+                                backgroundSlot={
+                                    <Image borderRadius="medium" src={sub.img} alt={sub.name} width={{ s: "calc(var(--rs-unit-x3) * 29vw)", l: "320px" }} />
+                                }
+                                >
+                                <Text variant="body-1" align="start">View Detailed Report : {sub.name}</Text>
+                            </Overlay>
                             </Card>    
                         </Link>
                     </Stack.Item>    
