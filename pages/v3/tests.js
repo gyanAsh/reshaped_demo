@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import DetailedTestAnalysis from '../../components/Tests/DetailedTestAnalysis';
+import PackageTests from '../../components/Tests/PackageTests';
 import PackDetails from '../../components/Tests/PackDetails';
 import PagePadding from '../../components/Wrapper/PagePadding';
 
@@ -14,7 +15,8 @@ const Tests = () => {
 
       <PagePadding>
         <PackDetails />
-        <DetailedTestAnalysis/>
+        <DetailedTestAnalysis />
+        <PackageTests/>
       </PagePadding>
     </div>
   )
