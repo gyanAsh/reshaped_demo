@@ -2,7 +2,7 @@ import React from 'react'
 
 const Mistake = () => {
   return (
-    <div>Mistake</div>
+    <div>Mistake demo clone.</div>
   )
 }
 
