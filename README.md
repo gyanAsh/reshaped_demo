@@ -2,6 +2,7 @@
 
 First, run the development server:
 new change
+change
 ```bash
 npm i
 # and them run:
